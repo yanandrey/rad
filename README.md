@@ -1,10 +1,18 @@
 # RAD API
 
 Este é um projeto de API RAD (Rapid Application Development) desenvolvido em Flask.
+## Estrutura da Aplicação
+
+A aplicação está estruturada em três camadas principais:
+
+1. **API REST com Flask**: Gerencia os endpoints para operações CRUD de usuários.
+2. **Lógica de Negócios**: Interage com o banco de dados PostgreSQL através do SQLAlchemy.
+3. **Contêineres Docker**: Empacotam a aplicação para garantir independência e reprodutibilidade em diferentes ambientes.
 
 ## Participantes
 
 - Yan Andrey Cruz de Paula, 202308397249
+- Guilherme Falcão Kal Schenfeld, 202302235964
 
 ## Tecnologias Utilizadas
 
