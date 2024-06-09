@@ -42,6 +42,37 @@ def create_app():
             db.session.commit()
             return new_user, 201
 
+    @ns.route('/<int:id>')
+    @ns.response(404, 'User not found')
+    @ns.param('id', 'The user identifier')
+    class UserResource(Resource):
+        @ns.doc('get_user')
+        @ns.marshal_with(user_model)
+        def get(self, id):
+            """Get a user data given its identifier"""
+            user = User.query.get_or_404(id)
+            return user
+
+        @ns.doc('delete_user')
+        @ns.response(204, 'User deleted')
+        def delete(self, id):
+            """Delete a user given its identifier"""
+            user = User.query.get_or_404(id)
+            db.session.delete(user)
+            db.session.commit()
+            return '', 204
+
+        @ns.expect(user_model)
+        @ns.marshal_with(user_model)
+        def put(self, id):
+            """Update a user given its identifier"""
+            user = User.query.get_or_404(id)
+            data = request.json
+            user.name = data['name']
+            user.email = data['email']
+            db.session.commit()
+            return user
+
     return app
 
 if __name__ == '__main__':
