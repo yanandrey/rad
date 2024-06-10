@@ -1,6 +1,7 @@
 # RAD API
 
-Este é um projeto de API RAD (Rapid Application Development) desenvolvido em Flask.
+Este é um projeto de API RAD (Rapid Application Development) desenvolvido em Flask, mais detalhes sobre a aplicação poderão ser encontrados através da [apresentação do projeto](https://drive.google.com/file/d/1_0Sa6gOgU1p0GPGgMp6zZCflf4zeZd2N/view?usp=sharing).
+
 ## Estrutura da Aplicação
 
 A aplicação está estruturada em três camadas principais:
